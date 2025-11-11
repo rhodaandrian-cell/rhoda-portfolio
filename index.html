@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rhoda Andrian — Portfolio</title>
+  <meta name="description" content="Portfolio of Rhoda Andrian — IT, Philosophy graduate, Virtual Assistant (meducical, Legal, Personal), Academic writer." />
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #6ee7b7;
+      --glass: rgba(255,255,255,0.03);
+      --radius: 12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      scroll-behavior: smooth;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#071023 0%, #07182a 60%);color:#e6eef6;-webkit-font-smoothing:antialiased;line-height:1.5;padding:24px;}
+    .container{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;position:sticky;top:0;background:var(--bg);z-index:999}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:#06202a}
+    nav{display:flex;gap:18px}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--accent)}
+    .cta{background:var(--accent);color:#06202a;padding:8px 14px;border-radius:10px;text-decoration:none;font-weight:700;transition:0.3s}
+    .cta:hover{opacity:0.85}
+    .hamburger{display:none;background:transparent;border:0;color:var(--muted);font-size:24px;cursor:pointer}
+    @media (max-width:760px){nav{display:none;flex-direction:column;background:var(--bg);position:absolute;top:72px;right:24px;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}.hamburger{display:block}}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:28px 0}
+    .hero h1{font-size:36px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .hero .links{display:flex;gap:12px}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6);transition:transform 0.3s ease}
+    .card:hover{transform:translateY(-3px)}
+    .profile-pic{width:100%;aspect-ratio:1/1;border-radius:12px;object-fit:cover}
+    section{margin:28px 0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .skill-card{padding:16px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);transition:transform 0.3s ease;cursor:default}
+    .skill-card:hover{transform:translateY(-4px)}
+    .skill-card h4{margin:0 0 8px}
+    .skill-card ul{padding-left:20px;margin:0}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .project h4{margin:0 0 6px}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.grid-3{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
+    @media (max-width:520px){.grid-3{grid-template-columns:1fr}}
+    footer{display:flex;justify-content:space-between;align-items:center;padding:18px 0;color:var(--muted)}
+    .fade-in{opacity:0;transform:translateY(8px);animation:fadeIn 700ms ease forwards}
+    @keyframes fadeIn{to{opacity:1;transform:none}}
+    .muted{color:var(--muted)}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:600;transition:0.3s}
+    .chip:hover{opacity:0.85}
+    .socials a{margin-right:8px;text-decoration:none;color:var(--muted)}
+    .project-tags{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
+    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    form label{font-size:13px;margin-bottom:6px;display:block}
+    form button{margin-top:8px;padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#06202a;font-weight:700;cursor:pointer;transition:0.3s}
+    form button:hover{opacity:0.85}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">RA</div>
+        <div>
+          <div style="font-weight:800">Rhoda Andrian</div>
+          <div class="muted" style="font-size:13px">IT & Philosophy graduate • Writer • Educator • Virtual Assistant</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Work Samples</a>
+        <a href="#tools">Tools</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#contact">Hire me</a>
+      </nav>
+      <button class="hamburger" id="menuBtn">☰</button>
+    </header>
+
+    <main class="hero">
+      <div class="fade-in">
+        <h1>Hi — I'm Rhoda.</h1>
+        <p>A curious IT & Philosophy graduate who writes, teaches, and builds web designs. I also support entrepreneurs and professionals through Virtual Assistant work in health and legal administration. I love turning ideas into organized, meaningful results.</p>
+        <div class="links">
+          <a class="chip" href="#projects">See Work Samples</a>
+          <a class="chip" href="#contact">Work with me</a>
+        </div>
+      </div>
+      <aside class="card fade-in">
+        <img class="profile-pic" src= "https://drive.google.com/uc?export=view&id=1EW0SuaNrIuacAboz0Mc1jxpB1dqaJm-V" alt="Rhoda Andrian Profile Picture">
+        <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:700">Rhoda Andrian</div>
+            <div class="muted" style="font-size:13px">IT graduate • Writer • VA</div>
+          </div>
+          <div class="socials muted">
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="about" class="fade-in">
+      <h2>About me</h2>
+      <div class="card" style="margin-top:12px">
+        <p>I believe technology should serve people — not the other way around.<br>
+        With a background in IT and Philosophy, I blend logic and empathy to create work that communicates with clarity, purpose, and heart. Whether I’m teaching, writing, or supporting clients as a Virtual Assistant, I’m driven by one question: <em>Does this make someone’s world a little clearer?</em></p>
+        <p>My experience spans communication, education, and digital organization — from crafting thoughtful content to managing workflows and research for busy professionals. I’m passionate about transforming ideas into impact — from classrooms to online spaces — and I love collaborating with people who value meaning, precision, and authenticity.</p>
+      </div>
+    </section>
+
+    <section id="skills" class="fade-in">
+      <h2>Skills & Expertise</h2>
+      <div class="grid-2" style="margin-top:12px; gap:16px">
+        <div class="skill-card fade-in">
+          <h4>IT & Digital Skills</h4>
+          <ul>
+            <li>Computer hardware & software troubleshooting</li>
+            <li>Installation & configuration of OS (Windows, Linux basics)</li>
+            <li>Network setup & basic security</li>
+            <li>Data entry, database management & file organization</li>
+            <li>Microsoft Office Suite & Google Workspace</li>
+            <li>Website basics (HTML, CSS), web design understanding</li>
+            <li>Social media management & digital marketing</li>
+            <li>Basic cybersecurity awareness & cloud collaboration</li>
+            <li>Logical problem solving & debugging</li>
+            <li>Creative IT applications for teaching & interactive designs</li>
+          </ul>
+        </div>
+        <div class="skill-card fade-in">
+          <h4>Gender & Communication Skills</h4>
+          <ul>
+            <li>Gender mainstreaming & analysis</li>
+            <li>Advocacy, awareness creation & community engagement</li>
+            <li>Protection & inclusion (child protection, GBV prevention, women empowerment)</li>
+            <li>Interpersonal communication & cross-cultural skills</li>
+            <li>Public speaking & presentations</li>
+            <li>Digital communication (email, social media, digital tools)</li>
+            <li>Writing & editing (reports, letters, proposals, posts)</li>
+            <li>Conflict resolution & mediation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+      <h2>Work Samples</h2>
+      <div class="card" style="margin-top:12px; text-align:center;">
+        <p>Explore my portfolio of work including IT projects, writing, research, and virtual assistant tasks.</p>
+        <a href="https://drive.google.com/drive/folders/1EW0SuaNrIuacAboz0Mc1jxpB1dqaJm-V?usp=drive_link" target="_blank" 
+           style="display:inline-block;margin-top:12px;padding:10px 16px;background:var(--accent);color:#06202a;border-radius:10px;font-weight:700;text-decoration:none;">
+          View Work Samples
+        </a>
+      </div>
+    </section>
+
+    <section id="tools" class="fade-in">
+      <h2>Tools & Technologies</h2>
+      <div class="grid-3" style="margin-top:12px; gap:16px; align-items:center;">
+        <div class="skill-card" style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Google_Drive_icon.svg" alt="Google Drive" style="height:50px;"><p>Google Drive</p></div>
+        <div class="skill-card" style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Google_Docs_logo.svg" alt="Google Docs" style="height:50px;"><p>Google Docs</p></div>
+        <div class="skill-card" style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Zoom_Communications_Logo.svg" alt="Zoom" style="height:50px;"><p>Zoom</p></div>
+        <div class="skill-card" style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Slack_Icon.png" alt="Slack" style="height:50px;"><p>Slack</p></div>
+        <div class="skill-card" style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Trello_logo.svg" alt="Trello" style="height:50px;"><p>Trello</p></div>
+        <div class="skill-card" style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Notion_app_logo.png" alt="Notion" style="height:50px;"><p>Notion</p></div>
+        <div class="skill-card" style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2021.svg" alt="Windows" style="height:50px;"><p>Windows</p></div>
+        <div class="skill-card" style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" style="height:50px;"><p>Linux</p></div>
+        <div class="skill-card" style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Microsoft_Office_logo_%282019%E2%80%93present%29.svg" alt="Microsoft Office" style="height:50px;"><p>MS Office</p></div>
+        <div class="skill-card" style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/HTML5_logo_and_wordmark.svg" alt="HTML5" style="height:50px;"><p>HTML5 & CSS3</p></div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+      <h2>Contact Me</h2>
+      <div class="card" style="margin-top:12px;">
+        <p>If you’d like to work with me, discuss a project, or just say hi, fill out the form below. I’ll get back to you as soon as possible!</p>
+        <p><strong>Email:</strong> rhodaandrian@gmail.com | <strong>Phone:</strong> 0742795627</p>
+        <form action="mailto:rhodaandrian@gmail.com" method="POST" enctype="text/plain" style="margin-top:12px; display:flex; flex-direction:column; gap:12px;">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> Rhoda Andrian — All rights reserved.</div>
+      <div class="muted">Built with ♥ — Lightweight HTML template</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn=document.getElementById('menuBtn');
+    menuBtn&&menuBtn.addEventListener('click',()=>{
+      const nav=document.querySelector('nav');
+      nav.style.display=nav.style.display==='flex'?'':'flex';
+    });
+  </script>
+</body>
+</html>
